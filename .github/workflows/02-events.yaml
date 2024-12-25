@@ -1,0 +1,16 @@
+name: 02-github-events
+
+on: 
+    push:
+    pull_request:
+    workflow_dispatch:
+    # schedule:
+    #     - cron: '*/5 * * * *'
+    
+
+jobs:
+    echo-event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo
+              run: echo "I have been triggered by ${{github.event_name}}"
